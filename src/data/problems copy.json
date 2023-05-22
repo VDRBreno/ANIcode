@@ -1,0 +1,294 @@
+{
+  "problems": [
+    {
+      "id": "79ec8b58-763b-4bee-9b48-6c3c1bcebb02",
+      "title": "Extremamente Básico",
+      "question": "Leia duas linhas, cada linha contém um número, imprima a soma dos números após 'X = '",
+      "examples": [
+        {
+          "input": "10\n9",
+          "output": "X = 19"
+        },
+        {
+          "input": "1\n0",
+          "output": "X = 1"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "10\n9",
+          "output": "X = 19"
+        },
+        {
+          "input": "1\n0",
+          "output": "X = 1"
+        },
+        {
+          "input": "135\n2",
+          "output": "X = 137"
+        }
+      ],
+      "solution": "const a=readline(),b=readline();console.log(`X = ${Number(a)+Number(b)}`)"
+    },
+    {
+      "id": "34f349cc-a81f-428a-bf3c-aedd6183cb3c",
+      "title": "Fatorial",
+      "question": "Imprima o fatorial de N se N for positivo, se N for 0 ou negativo, imprima 'Negativo aqui não'",
+      "examples": [
+        {
+          "input": "5",
+          "output": "120"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "5",
+          "output": "120"
+        },
+        {
+          "input": "0",
+          "output": "Negativo aqui não"
+        },
+        {
+          "input": "-1",
+          "output": "Negativo aqui não"
+        },
+        {
+          "input": "5",
+          "output": "120"
+        }
+      ],
+      "solution": "const input = parseInt(readline());\nfunction f(num) {\nif(num>1) return num*f(num-1);\nreturn num;\n}\nconsole.log(input>0 ?f(input) :'Negativo aqui não')"
+    },
+    {
+      "id": "afa57945-c322-46cb-be31-7150579bbd54",
+      "title": "Dia chuvoso",
+      "question": "Descubra quantos mm de chuva caiu na semana, você receberá uma string com 7 caracteres, R representa dia chuvoso, S representa dia com sol. Para os dias chuvosos, a chuva é de 4mm",
+      "examples": [
+        {
+          "input": "RRRRRRR",
+          "output": "28"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "RRRRRRR",
+          "output": "28"
+        },
+        {
+          "input": "RRRRRRS",
+          "output": "24"
+        },
+        {
+          "input": "RRRRRSS",
+          "output": "20"
+        },
+        {
+          "input": "RRRRSSS",
+          "output": "16"
+        },
+        {
+          "input": "RRRSSSS",
+          "output": "12"
+        },
+        {
+          "input": "RRSSSSS",
+          "output": "8"
+        },
+        {
+          "input": "RSSSSSS",
+          "output": "4"
+        },
+        {
+          "input": "SSSSSSS",
+          "output": "0"
+        }
+      ],
+      "solution": "t=0;for(s of readline())if(s=='R')t+=4;print(t)"
+    },
+    {
+      "id": "3d82bb9f-874c-435a-bcea-91728442d16f",
+      "title": "ASCII Maiúsculo",
+      "question": "A entrada será uma string, imprima a soma dos valores ASCII dos caracteres em maiúsculo da entrada.",
+      "examples": [
+        {
+          "input": "Hello World",
+          "output": "28"
+        },
+        {
+          "input": "Ola MundO",
+          "output": "235"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "Hello World",
+          "output": "28"
+        },
+        {
+          "input": "Ola MundO",
+          "output": "235"
+        },
+        {
+          "input": "TeSt CASe",
+          "output": "382"
+        }
+      ],
+      "solution": "const s = readline();const u = s.match(/[A-Z]/g);let sum = 0;u.map(c => {sum+=+c.charCodeAt(0);});console.log(sum)"
+    },
+    {
+      "id": "3d82bb9f-874c-435a-bcea-91728442d16f",
+      "title": "ASCII",
+      "question": "A entrada será uma string, imprima a soma total dos valores ASCII, respectivo de cada caractere da entrada, que for ímpar.",
+      "examples": [
+        {
+          "input": "Hello World",
+          "output": "28"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "Hello World",
+          "output": "28"
+        },
+        {
+          "input": "lowercase",
+          "output": "28"
+        },
+        {
+          "input": "UPPERCASE",
+          "output": "562"
+        }
+      ],
+      "solution": "const word = readline();let sum = 0;word.split('').map(c => {const code = c.charCodeAt(0);if(code%2!==0)sum+=code;});console.log(sum);"
+    },
+    {
+      "id": "dbd1dd06-fc05-42f5-aab4-51a6e3552dbc",
+      "title": "Henry dificuldades",
+      "question": "Henry tem dificuldades em fazer somas com números que não estão em ordem crescente, você poderia ajudá-lo?",
+      "examples": [
+        {
+          "input": "1+3+2",
+          "output": "1+2+3"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "1+3+2",
+          "output": "1+2+3"
+        },
+        {
+          "input": "10+30+20",
+          "output": "10+20+30"
+        }
+      ],
+      "solution": "const sum = readline();const n = sum.split('+').sort().join('+');console.log(n);"
+    },
+    {
+      "id": "4fdd237f-b2c8-489e-bbb3-c4864ab779b4",
+      "title": "Aniversariante",
+      "question": "Joquinha faz aniversário semana que vem, ele precisa saber em que dia da semana(domingo=1, segunda=2...) vai cair seu aniversário. A entrada são dois números, o primeiro é o dia da semana atual e o segundo é a quantidade de dias que faltam para o aniversário de Joquinha.",
+      "examples": [
+        {
+          "input": "3\n2",
+          "output": "5"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "3\n2",
+          "output": "5"
+        },
+        {
+          "input": "7\n1",
+          "output": "1"
+        },
+        {
+          "input": "5\n1",
+          "output": "6"
+        },
+        {
+          "input": "1\n7",
+          "output": "1"
+        }
+      ],
+      "solution": "const m = parseInt(readline());const n = parseInt(readline());console.log(m+n>7?m+n-7:m+n);"
+    },
+    {
+      "id": "89c5cc3e-3155-4793-8a46-d6e4e5cb4c65",
+      "title": "Matemática",
+      "question": "Resolva operações matemáticas. Apenas as 4 operações básicas serão consideradas",
+      "examples": [
+        {
+          "input": "1\n+\n2",
+          "output": "3"
+        },
+        {
+          "input": "1\nx\n2",
+          "output": "2"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "1\n+\n2",
+          "output": "3"
+        },
+        {
+          "input": "1\nx\n2",
+          "output": "2"
+        },
+        {
+          "input": "1\n/\n2",
+          "output": "0.5"
+        },
+        {
+          "input": "1\n-\n2",
+          "output": "-1"
+        }
+      ],
+      "solution": "const a=readline(),b=readline().replace('x','*'),c=readline();console.log(eval([a,b,c].join('')));"
+    },
+    {
+      "id": "8e9ca2b3-81d9-4941-b366-ab6d9a2cc78d",
+      "title": "Matemática",
+      "question": "Calcule a area de um triangulo equilátero, arredonde para cima, se necessário",
+      "examples": [
+        {
+          "input": "1",
+          "output": "1"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "1",
+          "output": ""
+        },
+        {
+          "input": "10",
+          "output": "44"
+        },
+        {
+          "input": "42",
+          "output": "764"
+        },
+        {
+          "input": "40",
+          "output": "693"
+        },
+        {
+          "input": "43",
+          "output": "801"
+        },
+        {
+          "input": "13",
+          "output": "74"
+        },
+        {
+          "input": "26",
+          "output": "293"
+        }
+      ],
+      "solution": "console.log(Math.ceil((+readline())**2*Math.sqrt(3)/4))"
+    }
+  ]
+}

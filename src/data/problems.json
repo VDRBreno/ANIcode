@@ -1,0 +1,30 @@
+{
+  "problems": [
+    {
+      "id": "9c56c794-24df-4afc-a65b-4b23e65c35ba",
+      "title": "Invertida frase",
+      "question": "Imprima a frase com as palavras na ordem inversa",
+      "examples": [
+        {
+          "input": "ola mundo",
+          "output": "mundo ola"
+        }
+      ],
+      "testCases": [
+        {
+          "input": "ola mundo",
+          "output": "mundo ola"
+        },
+        {
+          "input": "ola mundos",
+          "output": "mundos ola"
+        },
+        {
+          "input": "ola mundos",
+          "output": "mundos ola"
+        }
+      ],
+      "solution": "console.log(Math.ceil((+readline())**2*Math.sqrt(3)/4))"
+    }
+  ]
+}
